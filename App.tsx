@@ -1,11 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import Product from "./components/Product";
+import Greeting from "./components/Greeting";
+import Product from "./components/ProductList";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Product />
       <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
