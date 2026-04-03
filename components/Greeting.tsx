@@ -15,6 +15,7 @@ const Greeting = () => {
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     padding: 20,
   },
   salute: {
