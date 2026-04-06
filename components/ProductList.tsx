@@ -28,20 +28,34 @@ const dataList = [
   },
 ];
 
-const Product = () => {
-  const userName = "";
+const ProductList = () => {
+  const userName = "Leandro";
 
   return (
     <View style={styles.container}>
-     {dataList.map((item, index) => (
-      <View key={index} style={styles.itemCard}>
-        <View></View>
-      <Text style={styles.itemName}>{item.name}</Text>
-      <Text style={styles.itemPrice}>{item.price}</Text>
-      <Text style={styles.itemCategory}>{item.category}</Text>
-      
-       </View>
-))}
+      <View style={styles.greetingContainer}>
+        <Text style={styles.salute}>Welcome, {userName}! </Text>
+        <Ionicons name="sparkles-outline" size={30} color={"orange"}></Ionicons>
+      </View>
+
+      {dataList.map((item, index) => (
+        <View key={index} style={styles.itemCard}>
+          <Text style={styles.itemName}>{item.name}</Text>
+
+          <Text
+            style={[styles.itemPrice, { color: item.onSale ? "red" : "green" }]}
+          >
+            {item.price}
+          </Text>
+          <Text style={styles.itemCategory}>{item.category}</Text>
+          {item.onSale && (
+            <View style={styles.saleBadge}>
+              <Ionicons name="pricetag" size={14} color="#e93333" />
+              <Text style={styles.sale}>On Sale</Text>
+            </View>
+          )}
+        </View>
+      ))}
     </View>
   );
 };
@@ -50,26 +64,36 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
   },
+  greetingContainer: {
+    flexDirection: "row",
+    padding: 20,
+  },
+  salute: {
+    fontSize: 26,
+    fontWeight: "bold",
+  },
   itemName: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "semibold",
   },
-  itemPrice:{
+  itemPrice: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "semibold",
   },
-  itemCategory:{
+  itemCategory: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "semibold",
   },
-  itemCard:{
+  itemCard: {
     padding: 15,
-    backgroundColor: '#f9f9f9',
+    backgroundColor: "#f9f9f9",
     borderRadius: 8,
     marginBottom: 10,
     borderWidth: 4,
-    borderColor: 'orange',
-  }
+    borderColor: "orange",
+  },
+  sale: {},
+  saleBadge: {},
 });
 
-export default Product;
+export default ProductList;
