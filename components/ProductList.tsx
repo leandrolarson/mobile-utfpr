@@ -40,18 +40,18 @@ const ProductList = () => {
 
       {dataList.map((item, index) => (
         <View key={index} style={styles.itemCard}>
-          <Text style={styles.itemName}>{item.name}</Text>
+          <Text style={styles.itemText}>{item.name}</Text>
 
           <Text
-            style={[styles.itemPrice, { color: item.onSale ? "red" : "green" }]}
+            style={[styles.itemText, { color: item.onSale ? "red" : "green" }]}
           >
             {item.price}
           </Text>
-          <Text style={styles.itemCategory}>{item.category}</Text>
+          <Text style={styles.itemText}>{item.category}</Text>
           {item.onSale && (
             <View style={styles.saleBadge}>
               <Ionicons name="pricetag" size={14} color="#e93333" />
-              <Text style={styles.sale}>On Sale</Text>
+              <Text style={styles.itemText}>On Sale</Text>
             </View>
           )}
         </View>
@@ -72,15 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "bold",
   },
-  itemName: {
-    fontSize: 16,
-    fontWeight: "semibold",
-  },
-  itemPrice: {
-    fontSize: 16,
-    fontWeight: "semibold",
-  },
-  itemCategory: {
+  itemText: {
     fontSize: 16,
     fontWeight: "semibold",
   },
@@ -90,10 +82,18 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginBottom: 10,
     borderWidth: 4,
-    borderColor: "orange",
+    borderColor: "#ffffff",
+    elevation: 6
   },
-  sale: {},
-  saleBadge: {},
+  saleBadge: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#e4e4e4",
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+    alignSelf: "flex-start",
+  },
 });
 
 export default ProductList;
