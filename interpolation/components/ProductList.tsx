@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderWidth: 4,
     borderColor: "#ffffff",
-    elevation: 6
+    elevation: 6,
   },
   saleBadge: {
     flexDirection: "row",
