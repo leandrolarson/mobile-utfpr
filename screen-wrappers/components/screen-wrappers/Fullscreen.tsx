@@ -17,6 +17,7 @@ export default function Fullscreen({
     <View
       style={[
         {
+          flex: 1,
           justifyContent: center ? "center" : "flex-start",
           alignItems: center ? "center" : "stretch",
           padding: padding,
