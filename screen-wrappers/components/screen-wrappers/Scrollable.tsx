@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import { View, RefreshControl, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type ScrollableProps = {
   children: React.ReactNode;
@@ -25,17 +26,19 @@ export default function Scrollable({
   }, [onRefresh]);
 
   return (
-    <ScrollView
-      refreshControl={
-        onRefresh ? (
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefreshWrapper}
-          />
-        ) : undefined
-      }
-    >
-      <View style={[{ padding: padding, gap: gap }]}>{children}</View>
-    </ScrollView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView
+        refreshControl={
+          onRefresh ? (
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefreshWrapper}
+            />
+          ) : undefined
+        }
+      >
+        <View style={[{ padding: padding, gap: gap }]}>{children}</View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }

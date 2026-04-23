@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  View,
   Text,
   TextInput,
   TouchableOpacity,
@@ -13,7 +12,7 @@ export default function LoginScreen() {
   const [password, setPassword] = useState("");
 
   return (
-    <View style={styles.container}>
+    <>
       <Image
         source={{
           uri: "https://res.cloudinary.com/dc0qqgkmp/image/upload/v1776281845/Dunder_Mifflin-logo_ba3ypl.png",
@@ -45,18 +44,11 @@ export default function LoginScreen() {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-    backgroundColor: "#fff",
-  },
   logo: {
     width: 180,
     height: 100,

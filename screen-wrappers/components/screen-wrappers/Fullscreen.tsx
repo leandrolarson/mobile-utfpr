@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type FullscreenProps = {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ export default function Fullscreen({
   gap = 0,
 }: FullscreenProps) {
   return (
-    <View
+    <SafeAreaView
       style={[
         {
           flex: 1,
@@ -26,6 +26,6 @@ export default function Fullscreen({
       ]}
     >
       {children}
-    </View>
+    </SafeAreaView>
   );
 }
