@@ -14,6 +14,7 @@ export default function VisitorScreen() {
     <View style={styles.container}>
       {/* CABEÇALHO */}
       <View style={styles.header}>
+        <Text></Text>
         <Text style={styles.headerText}>WELCOME TO COMIC SHOP CENTER</Text>
       </View>
 
