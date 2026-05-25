@@ -1,4 +1,9 @@
-import { Motorcycle, SectionData } from "../types/motorcycle";
+import { Motorcycle } from "../mocks/mock-data";
+
+type SectionData = {
+  title: string;
+  data: Motorcycle[];
+};
 
 export function formatToSectionList(items: Motorcycle[]): SectionData[] {
   const grouped = items.reduce<Record<string, Motorcycle[]>>((acc, item) => {
